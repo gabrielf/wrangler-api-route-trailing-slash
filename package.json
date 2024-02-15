@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "clean": "rm -rf .next .vercel .wrangler",
+    "dev": "npm run clean && next dev",
     "build": "next build",
     "start": "next start",
-    "wrangler": "npx wrangler pages dev '.vercel/output/static' --compatibility-flag=nodejs_compat --compatibility-date=2023-04-05 --port=3000",
+    "next-on-pages": "npm run clean && npx @cloudflare/next-on-pages",
+    "wrangler": "npm run next-on-pages && npx wrangler pages dev '.vercel/output/static' --compatibility-flag=nodejs_compat --compatibility-date=2024-01-01 --port=3000",
     "lint": "next lint"
   },
   "dependencies": {
