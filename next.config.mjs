@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    trailingSlash: true
+    trailingSlash: true,
+    i18n: {
+        localeDetection: false,
+        locales: ['en', 'sv'],
+        defaultLocale: 'en'
+    }
 };
 
 export default nextConfig;
